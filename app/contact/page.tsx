@@ -2,6 +2,7 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ContactForm from "./ContactForm";
+import Image from "next/image";
 
 export const metadata = { title: "Contact — Unomi" };
 
@@ -15,6 +16,14 @@ export default function ContactPage() {
           <p className="mt-3 text-neutral-700">
             Tell us what you’re trying to fix. We’ll follow up fast.
           </p>
+          <div className="mt-4">
+        <Image
+           src="/mascot/unomi-robot-256.png"
+          alt="Unomi robot"
+         width={100}
+           height={100}
+     />
+       </div>
           <ContactForm />
         </section>
       </main>

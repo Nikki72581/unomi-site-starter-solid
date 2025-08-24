@@ -1,6 +1,9 @@
 import Header from "../../components/Header";
+
 import Footer from "../../components/Footer";
 export const metadata={title:"Services — Unomi"};
+
+import Image from "next/image";
 export default function Services(){
   return(<div className="min-h-screen flex flex-col">
     <Header/>
@@ -8,6 +11,14 @@ export default function Services(){
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-10">
         <h1 className="text-4xl font-bold tracking-tight">Services</h1>
         <p className="mt-3 max-w-2xl text-neutral-700">Modular engagements that fit your team and timeline. No giant mystery SOWs.</p>
+        <div className="mt-6">
++          <Image
+           src="/mascot/unomi-robot-256.png"
+            alt="Unomi robot"
+            width={120}
+            height={120}
+          />
++        </div>
       </section>
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6">
         {[

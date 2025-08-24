@@ -6,7 +6,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title:"Unomi — Independent tech consulting, built on trust",
   description:"Unomi is an independent consultancy for eCommerce, ERP, custom development, reporting, and AI.",
-  icons:{icon:"/favicon.ico"},
+  icons:{
+    icon: ["/mascot/unomi-robot-32.png", "/favicon.ico"],
+    apple: "/mascot/unomi-robot-180.png"
+  },
   openGraph:{title:"Unomi",description:"Independent tech consulting, built on trust.",images:["/og.png"]},
   metadataBase:new URL("https://unomi.co")
 };

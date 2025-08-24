@@ -2,6 +2,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { manifesto } from "../content/manifesto";
 
@@ -31,6 +32,15 @@ export default function Home() {
                 Explore services
               </Link>
             </div>
+             <div className="mt-10 flex justify-center lg:justify-end">
+           <Image
+             src="/mascot/unomi-robot-512.png"
+             alt="Unomi robot mascot"
+             width={180}
+             height={180}
+            priority
+           />
++          </div>
           </div>
         </section>
 
