@@ -1,22 +1,32 @@
-
+// app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
 export const metadata: Metadata = {
-  title:"Unomi — Independent tech consulting, built on trust",
-  description:"Unomi is an independent consultancy for eCommerce, ERP, custom development, reporting, and AI.",
-  icons:{
-    icon: ["/mascot/unomi-robot-32.png", "/favicon.ico"],
-    apple: "/mascot/unomi-robot-180.png"
+  title: "Junova",
+  description: "Modern systems, human sense.",
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/apple-touch-icon.png"
   },
-  openGraph:{title:"Unomi",description:"Independent tech consulting, built on trust.",images:["/og.png"]},
-  metadataBase:new URL("https://unomi.co")
+  themeColor: "#141414",
+  openGraph: {
+    title: "Junova",
+    description: "Modern systems, human sense.",
+    images: ["/junova_avatar_square.png"]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Junova",
+    description: "Modern systems, human sense.",
+    images: ["/junova_avatar_square.png"]
+  }
 };
-export default function RootLayout({children}:{children:React.ReactNode}) {
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans`}>{children}</body>
+      <body>{children}</body>
     </html>
   );
-};
+}

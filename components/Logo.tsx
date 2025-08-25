@@ -1,8 +1,17 @@
-export default function Logo({ size = 28 }: { size?: number }) {
+// components/Logo.tsx
+import Image from "next/image";
+
+export function Logo({ size = 28, variant = "wordmark" }: { size?: number; variant?: "wordmark" | "text"; }) {
+  if (variant === "text") {
+    return <span className="font-extrabold tracking-tight" style={{ color: "var(--brand-ink)" }}>junova</span>;
+  }
   return (
-    <div className="flex items-center gap-2">
-      <div className="rounded-xl shadow-glow" style={{width:size,height:size,background:"linear-gradient(135deg,#7C3AED,#22C55E)"}} />
-      <span className="font-semibold tracking-tight">Unomi</span>
-    </div>
+    <Image
+      src="/junova-wordmark.svg"   // if you prefer the SVG, drop it in /public
+      alt="Junova"
+      width={size * 5}
+      height={size}
+      priority
+    />
   );
 }

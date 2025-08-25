@@ -1,3 +1,14 @@
+/* app/globals.css */
+@import "./styles/junova.tokens.css";
+
+/* helpers you’ll reuse */
+.bg-brand { background: var(--brand-gradient); }
+.text-ink { color: var(--brand-ink); }
+.card {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  background: var(--brand-bg);
+}
 
  @tailwind base;
  @tailwind components;
