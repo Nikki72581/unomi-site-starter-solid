@@ -1,88 +1,236 @@
 // app/page.tsx
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { manifesto } from "../content/manifesto";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1">
-        <section className="relative">
-          <div className="absolute inset-0 hero-ring" aria-hidden="true" />
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-            <div className="inline-flex items-center gap-2 badge">
-              <Sparkles className="h-3.5 w-3.5" />
-              <span>Independent. Human. Fluent.</span>
-            </div>
-            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
-              Consulting that feels human.<br />Results that feel inevitable.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-neutral-700">
-              Unomi helps you navigate eCommerce, ERP, custom development, reporting, and AI with clear answers and zero kickbacks.
-            </p>
-            <div className="mt-8 flex items-center gap-3">
-              <Link href="/contact" className="btn-primary">
-                Start a project <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-              <Link href="/services" className="btn-ghost">
-                Explore services
-              </Link>
-            </div>
-             <div className="mt-10 flex justify-center lg:justify-end">
-           <Image
-             src="/mascot/unomi-robot-512.png"
-             alt="Unomi robot mascot"
-             width={180}
-             height={180}
-            priority
-           />
-+          </div>
-          </div>
-        </section>
+    <main style={{ background: "var(--brand-bg, #FFFFFF)" }}>
+      {/* Hero */}
+      <section className="mx-auto max-w-6xl px-6 pt-20 pb-16">
+        <p
+          className="mb-4 inline-block rounded-full px-3 py-1 text-xs font-medium"
+          style={{
+            background: "rgba(20,20,20,0.04)",
+            color: "var(--brand-ink, #141414)",
+            border: "1px solid rgba(20,20,20,0.08)",
+          }}
+        >
+          junova • independent, human-first consulting
+        </p>
 
-        <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-16">
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { title: "ERP & eComm", body: "Sage, NetSuite, Dynamics, Acumatica, Shopify, BigCommerce. Integration without the drama." },
-              { title: "Custom Dev & AI", body: "From scoping to shipping. Practical automation that respects your people and process." },
-              { title: "Reporting & Ops", body: "Dashboards, data hygiene, and clean handoffs so you stop babysitting spreadsheets." },
-            ].map((c) => (
-              <div key={c.title} className="card p-6">
-                <h3 className="text-lg font-semibold">{c.title}</h3>
-                <p className="mt-2 text-neutral-700">{c.body}</p>
-                <Link href="/services" className="mt-4 inline-flex items-center text-neutral-900 hover:opacity-80">
-                  Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tight">
+          <span
+            className="bg-clip-text text-transparent"
+            style={{ background: "var(--brand-gradient, linear-gradient(45deg,#6E3AFF,#21D07A))" }}
+          >
+            Human. Clear. Shipped.
+          </span>
+        </h1>
 
-        <section className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 mt-20">
-          <div className="card p-6 md:p-8">
-            <h2 className="text-2xl font-semibold">Our Manifesto</h2>
-            <p className="mt-4 text-neutral-700 whitespace-pre-line">{manifesto}</p>
-          </div>
-        </section>
+        <p
+          className="mt-4 max-w-2xl text-lg md:text-xl"
+          style={{ color: "color-mix(in srgb, var(--brand-ink, #141414) 80%, transparent)" }}
+        >
+          We untangle ecommerce, ERP, and AI workflows with senior hands on keyboards and zero fluff.
+          Advisory that actually implements.
+        </p>
 
-        <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-24">
-          <div className="card p-8 md:p-10 text-center">
-            <h3 className="text-2xl font-semibold">Let’s build something useful.</h3>
-            <p className="mt-2 text-neutral-700">
-              Tell us what you’re trying to fix. We’ll keep it simple and ship it.
-            </p>
-            <div className="mt-6">
-              <Link href="/contact" className="btn-primary">Contact us</Link>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          <a
+            href="#contact"
+            className="px-5 py-3 rounded-lg text-white font-medium"
+            style={{
+              background: "var(--brand-gradient, linear-gradient(45deg,#6E3AFF,#21D07A))",
+              boxShadow: "var(--shadow-md, 0 6px 20px rgba(17,24,39,0.08))",
+            }}
+          >
+            Start a scope
+          </a>
+          <Link
+            href="#services"
+            className="px-5 py-3 rounded-lg font-medium"
+            style={{
+              color: "var(--brand-ink, #141414)",
+              border: "1px solid rgba(20,20,20,0.12)",
+              background: "var(--brand-bg, #FFFFFF)",
+            }}
+          >
+            See how we work
+          </Link>
+        </div>
+      </section>
+
+      {/* Trust blips */}
+      <section className="mx-auto max-w-6xl px-6 pb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+          {[
+            "ERP & ecommerce expertise",
+            "AI + automation, not theatre",
+            "Vendor-neutral advisory",
+            "Measured in weeks, not quarters",
+          ].map((t, i) => (
+            <div
+              key={i}
+              className="rounded-lg px-3 py-2"
+              style={{ background: "rgba(20,20,20,0.04)", color: "var(--brand-ink, #141414)" }}
+            >
+              {t}
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="mx-auto max-w-6xl px-6 py-12">
+        <h2
+          className="text-2xl font-semibold mb-6"
+          style={{ color: "var(--brand-ink, #141414)" }}
+        >
+          What we do
+        </h2>
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            {
+              title: "Advisory",
+              body:
+                "Audits, roadmaps, vendor-neutral selection. Clear scope, honest trade-offs, real timelines.",
+            },
+            {
+              title: "Implementation",
+              body:
+                "ERP/ecommerce integration, payments, and data flows. We ship clean, well-documented systems.",
+            },
+            {
+              title: "AI & Automation",
+              body:
+                "AR/AP automation and internal tools that save hours, not just look good in a slide deck.",
+            },
+          ].map((card) => (
+            <div
+              key={card.title}
+              className="p-6 rounded-xl border"
+              style={{
+                borderColor: "rgba(20,20,20,0.08)",
+                background: "var(--brand-bg, #FFFFFF)",
+                boxShadow: "var(--shadow-md, 0 6px 20px rgba(17,24,39,0.08))",
+              }}
+            >
+              <h3 className="text-lg font-semibold" style={{ color: "var(--brand-ink, #141414)" }}>
+                {card.title}
+              </h3>
+              <p className="mt-2 text-sm" style={{ color: "color-mix(in srgb, var(--brand-ink, #141414) 75%, transparent)" }}>
+                {card.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="mx-auto max-w-6xl px-6 py-12">
+        <h2 className="text-2xl font-semibold mb-6" style={{ color: "var(--brand-ink, #141414)" }}>
+          How we work
+        </h2>
+        <ol className="grid gap-6 md:grid-cols-3">
+          {[
+            {
+              title: "1. Clarity",
+              body: "We map reality, not fantasy. Short discovery, ruthless scope, visible decisions.",
+            },
+            {
+              title: "2. Build",
+              body: "Senior hands on keyboards. Prototype early, iterate fast, document as we go.",
+            },
+            {
+              title: "3. Value",
+              body: "Ship, measure, improve. If it doesn’t move a KPI, it’s theatre and it doesn’t ship.",
+            },
+          ].map((step) => (
+            <li
+              key={step.title}
+              className="p-6 rounded-xl border"
+              style={{ borderColor: "rgba(20,20,20,0.08)", background: "var(--brand-bg, #FFFFFF)" }}
+            >
+              <h3 className="text-lg font-semibold" style={{ color: "var(--brand-ink, #141414)" }}>
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm" style={{ color: "color-mix(in srgb, var(--brand-ink, #141414) 75%, transparent)" }}>
+                {step.body}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* Callout */}
+      <section className="mx-auto max-w-6xl px-6 pb-20">
+        <div
+          className="rounded-2xl p-8 md:p-10 text-white"
+          style={{
+            background: "var(--brand-gradient, linear-gradient(45deg,#6E3AFF,#21D07A))",
+            boxShadow: "var(--shadow-lg, 0 12px 34px rgba(17,24,39,0.10))",
+          }}
+        >
+          <h3 className="text-2xl md:text-3xl font-extrabold">The calm in your stack.</h3>
+          <p className="mt-2 text-sm md:text-base opacity-90">
+            Bring us the messy threads. We’ll leave you with a system your team actually likes.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="#contact"
+              className="px-5 py-3 rounded-lg font-medium bg-white/10 backdrop-blur"
+              style={{ border: "1px solid rgba(255,255,255,0.25)" }}
+            >
+              Start a scope
+            </a>
+            <a
+              href="#contact"
+              className="px-5 py-3 rounded-lg font-medium bg-white text-black"
+            >
+              Talk to us
+            </a>
           </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+        </div>
+      </section>
+
+      {/* Contact stub */}
+      <section id="contact" className="mx-auto max-w-6xl px-6 pb-24">
+        <div
+          className="rounded-xl p-6 border"
+          style={{ borderColor: "rgba(20,20,20,0.08)", background: "var(--brand-bg, #FFFFFF)" }}
+        >
+          <h2 className="text-xl font-semibold" style={{ color: "var(--brand-ink, #141414)" }}>
+            Get in touch
+          </h2>
+          <p className="mt-2 text-sm" style={{ color: "color-mix(in srgb, var(--brand-ink, #141414) 75%, transparent)" }}>
+            Drop a note and we’ll reply with next steps.
+          </p>
+          <form className="mt-4 grid gap-3 md:grid-cols-2">
+            <input
+              className="w-full rounded-lg border px-3 py-2"
+              placeholder="Name"
+              style={{ borderColor: "rgba(20,20,20,0.15)", background: "#fff" }}
+            />
+            <input
+              className="w-full rounded-lg border px-3 py-2"
+              placeholder="Email"
+              type="email"
+              style={{ borderColor: "rgba(20,20,20,0.15)", background: "#fff" }}
+            />
+            <textarea
+              className="md:col-span-2 w-full rounded-lg border px-3 py-2 min-h-[120px]"
+              placeholder="What do you want to build or fix?"
+              style={{ borderColor: "rgba(20,20,20,0.15)", background: "#fff" }}
+            />
+            <button
+              type="submit"
+              className="md:col-span-2 rounded-lg text-white px-4 py-3 font-medium"
+              style={{ background: "var(--brand-gradient, linear-gradient(45deg,#6E3AFF,#21D07A))" }}
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
   );
 }
-
