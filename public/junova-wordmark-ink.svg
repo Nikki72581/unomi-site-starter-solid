@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="256" viewBox="0 0 1024 256" fill="none">
+
+<style><![CDATA[
+  .wmark { font-family: Inter, 'SF Pro Display', 'Segoe UI', Roboto, Arial, system-ui, sans-serif; font-weight: 800; }
+]]></style>
+<text x="64" y="180" class="wmark" font-size="160" fill="#141414" letter-spacing="-6">junova</text>
+
+</svg>

@@ -1,5 +1,9 @@
 // app/layout.tsx
 import "./globals.css";
+import "./styles/junova.tokens.css"; // belt + suspenders
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

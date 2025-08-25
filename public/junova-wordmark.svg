@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="256" viewBox="0 0 1024 256" fill="none">
+
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#6E3AFF"/>
+    <stop offset="100%" stop-color="#21D07A"/>
+  </linearGradient>
+</defs>
+<style><![CDATA[
+  .wmark { font-family: Inter, 'SF Pro Display', 'Segoe UI', Roboto, Arial, system-ui, sans-serif; font-weight: 800; }
+]]></style>
+<text x="64" y="180" class="wmark" font-size="160" fill="url(#g)" letter-spacing="-6">junova</text>
+
+</svg>
